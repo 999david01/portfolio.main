@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <title>Portfolio</title>
+    <!-- do never remove if removed site is fucked -->
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cursor.css" />
+</head>
+
+<body>
+<!-- cursor -->
+<div class="cursor" aria-hidden="true">
+    <svg class="cursor__ball cursor__ball--big" width="30" height="30">
+        <circle cx="15" cy="15" r="12"></circle>
+    </svg>
+
+    <svg class="cursor__ball cursor__ball--small" width="10" height="10">
+        <circle cx="5" cy="5" r="4"></circle>
+    </svg>
+</div>
+
+<!-- top bar -->
+<header class="topBar" id="topBar" aria-label="Top Navigation">
+    <div class="topBar-inner">
+        <a class="brand hoverable" href="#top" aria-label="Back to top">
+            David
+        </a>
+
+        <nav class="topNav" aria-label="Primary">
+            <a class="topLink hoverable" href="#history">History</a>
+            <a class="topLink hoverable" href="#whitehole">Skills</a>
+            <a class="topLink hoverable" href="#projects">Projects</a>
+            <a class="topLink hoverable" href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- hero -->
+<section id="top" class="hero">
+    <h1 class="heroName">David</h1>
+</section>
+
+<!-- about -->
+<section id="about" class="about sectionFade">
+    <div class="about-inner">
+
+        <div class="about-card">
+            <h3 class="section-eyebrow">About</h3>
+
+            <div class="about-media">
+                <div class="My-img">
+                    <img src="imgs/images.jpg" alt="Me">
+                </div>
+
+                <div class="resume-btns">
+                    <a href="#" class="resume-btn1" id="downloadResume">Resume</a>
+                    <a href="https://github.com/999david01" class="resume-btn2">Github</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">- your mentality is your limit</h2>
+
+            <p class="section-text">
+                I build programs that are fast, clean and just work.
+            </p>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <div class="statValue">2+</div>
+                    <div class="statLabel">Years building</div>
+                </div>
+                <div class="stat">
+                    <div class="statValue">5+</div>
+                    <div class="statLabel">Projects shipped</div>
+                </div>
+                <div class="stat">
+                    <div class="statValue">A+</div>
+                    <div class="statLabel">Taste</div>
+                </div>
+            </div>
+
+            <div class="about-actions">
+                <a class="primaryBtn hoverable" href="#projects">See Projects</a>
+                <a class="ghostBtn hoverable" href="#contact">Let’s Talk</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- about highlights -->
+<section id="about-bottom" class="history sectionFade">
+    <aside class="about-side orbit" aria-label="Highlights">
+
+        <div class="sideCard orbit-item" style="--i:0">
+            <h4>Now</h4>
+            <p>
+                Working on web projects, UI polish, and building a strong portfolio
+                that actually converts.
+            </p>
+        </div>
+
+        <div class="sideCard orbit-item" style="--i:1">
+            <h4>Tools</h4>
+            <div class="chipRow">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">Java</span>
+            </div>
+        </div>
+
+        <div class="sideCard orbit-item" style="--i:2">
+            <h4>Focus</h4>
+            <div class="chipRow">
+                <span class="chip">Clean UI</span>
+                <span class="chip">Speed</span>
+                <span class="chip">Motion</span>
+                <span class="chip">Brand</span>
+                <span class="chip">Functionality</span>
+            </div>
+        </div>
+
+    </aside>
+</section>
+
+<!-- small title quote -->
+<section class="image-and-container sectionFade" aria-label="Statement">
+    <img
+            class="logo-img"
+            src="imgs/personal_buisness_logo-removebg-preview.png"
+            alt="Logo"
+            draggable="false"
+    />
+
+    <div class="container">
+        <h2>your mentality is your limit</h2>
+        <h5>I´m the founder of bean4U</h5>
+    </div>
+</section>
+
+<!-- history -->
+<section id="history" class="history sectionFade">
+    <h3 class="history-title">History</h3>
+
+    <div class="history-timeline">
+        <div class="history-item">
+            <div class="history-card">
+                <img class="logo-img" src="imgs/bean4U-startup.png"
+                     alt="" draggable="false" />
+                <div>
+                    <h3>2024</h3>
+                    <p>I started my coffee recipe website called bean4U.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-item">
+            <div class="history-card">
+                <img class="logo-img" src="imgs/htl-anichstrasse-logo.svg"
+                     alt="" draggable="false" />
+                <div>
+                    <h3>2025</h3>
+                    <p>I started attending the technical college HTL Anichstraße.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-item">
+            <div class="history-card">
+                <img class="logo-img" src="imgs/java.webp"
+                     alt="" draggable="false" />
+                <div>
+                    <h3>2025</h3>
+                    <p>I started learning Java.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-item">
+            <div class="history-card">
+                <img class="logo-img" src="imgs/icons/js.png"
+                     alt="" draggable="false" />
+                <div>
+                    <h3>Now</h3>
+                    <p>Building modern web experiences and polishing my personal brand.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- skills -->
+<section class="skills-strip sectionFade" aria-label="Skills">
+    <div class="slog1">If it isn´t fast, it isn´t good.</div>
+
+    <div class="skills-marquee">
+        <div class="skills-track">
+            <!-- first set -->
+            <div class="skillIcon"><img src="imgs/icons/js.png" alt="JS" /></div>
+            <div class="skillIcon"><img src="imgs/icons/ts.png" alt="TS" /></div>
+            <div class="skillIcon"><img src="imgs/icons/html.png" alt="HTML" /></div>
+            <div class="skillIcon"><img src="imgs/icons/css.png" alt="CSS" /></div>
+            <div class="skillIcon"><img src="imgs/icons/python.png" alt="Python" /></div>
+            <div class="skillIcon"><img src="imgs/icons/java.png" alt="Java" /></div>
+            <div class="skillIcon"><img src="imgs/icons/chatgpt.png" alt="ChatGPT" /></div>
+            <div class="skillIcon"><img src="imgs/icons/linux.png" alt="Linux" /></div>
+
+            <!-- duplicate for seamless animation -->
+            <div class="skillIcon"><img src="imgs/icons/js.png" alt="JS" /></div>
+            <div class="skillIcon"><img src="imgs/icons/ts.png" alt="TS" /></div>
+            <div class="skillIcon"><img src="imgs/icons/html.png" alt="HTML" /></div>
+            <div class="skillIcon"><img src="imgs/icons/css.png" alt="CSS" /></div>
+            <div class="skillIcon"><img src="imgs/icons/python.png" alt="Python" /></div>
+            <div class="skillIcon"><img src="imgs/icons/java.png" alt="Java" /></div>
+            <div class="skillIcon"><img src="imgs/icons/chatgpt.png" alt="ChatGPT" /></div>
+            <div class="skillIcon"><img src="imgs/icons/linux.png" alt="Linux" /></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- transition image -->
+<section id="whitehole" class="whitehole" aria-label="Transition">
+    <img
+            class="whitehole-image"
+            src="imgs/black%20white%20transiotion.png"
+            alt="Transition"
+            draggable="false"
+    />
+</section>
+
+<!-- projects part -->
+<section id="projects" class="projects sectionFade">
+    <div class="projects-inner">
+        <h3 class="projects-eyebrow">Work</h3>
+        <h2 class="projects-title">Projects</h2>
+        <p class="projects-sub">
+            My work
+        </p>
+
+        <div class="projectGrid">
+            <a class="projectCard hoverable" href="https://bean4u.coffee" target="_blank" rel="noreferrer">
+                <div class="projectTop">
+                    <span class="projectTag">Web</span>
+                    <span class="projectYear">2025</span>
+                </div>
+                <h4>bean4U</h4>
+                <p>Coffee recipes, clean UI, and fast pages.</p>
+                <div class="projectMeta">
+                    <span class="chip dark">HTML</span>
+                    <span class="chip dark">CSS</span>
+                    <span class="chip dark">JS</span>
+                </div>
+            </a>
+
+            <a class="projectCard hoverable" href="#" target="_blank" rel="noreferrer">
+                <div class="projectTop">
+                    <span class="projectTag">App</span>
+                    <span class="projectYear">2025</span>
+                </div>
+                <h4>Portfolio System</h4>
+                <p>Reusable sections, smooth motion, premium look.</p>
+                <div class="projectMeta">
+                    <span class="chip dark">UI</span>
+                    <span class="chip dark">Motion</span>
+                    <span class="chip dark">Design</span>
+                </div>
+            </a>
+
+            <a class="projectCard hoverable" href="https://github.com/999david01/Formula-Arch" target="_blank" rel="noreferrer">
+                <div class="projectTop">
+                    <span class="projectTag">Tool</span>
+                    <span class="projectYear">2026</span>
+                </div>
+                <h4>Formula Arch</h4>
+                <p>A Arch linux theme made to look like F1.</p>
+                <div class="projectMeta">
+                    <span class="chip dark">F1</span>
+                    <span class="chip dark">Arch Linux</span>
+                    <span class="chip dark">Sleek</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- contact -->
+<section id="contact" class="contact sectionFade">
+    <div class="contact-inner">
+        <h3 class="contact-eyebrow">Contact</h3>
+        <h2 class="contact-title">Let’s build</h2>
+        <p class="contact-sub">
+            Make programmming great again.
+        </p>
+
+        <div class="contactGrid">
+            <div class="contactCard">
+                <h4>Reach out</h4>
+                <p class="muted">
+                    Reach out to me if you would like to work together.
+                </p>
+
+                <div class="contactLinks">
+                    <a class="contactLink hoverable" href="mailto:999david01@gmx.at">
+                        999david01@gmx.at
+                    </a>
+                    <a class="contactLink hoverable"
+                       href="https://www.instagram.com/999david01"
+                       target="_blank" rel="noreferrer">
+                        Instagram
+                    </a>
+                    <a class="contactLink hoverable"
+                       href="https://github.com/999david01"
+                       target="_blank" rel="noreferrer">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <form class="contactForm" id="contactForm" novalidate>
+                <label class="field hp">
+                    <span>Website</span>
+                    <input type="text" name="website"
+                           autocomplete="off" tabindex="-1" />
+                </label>
+
+                <label class="field">
+                    <span>Name</span>
+                    <input class="hoverable" type="text" name="name"
+                           placeholder="Please enter your name" required />
+                </label>
+
+                <label class="field">
+                    <span>Email</span>
+                    <input class="hoverable" type="email" name="email"
+                           placeholder="Please enter your email" required />
+                </label>
+
+                <label class="field">
+                    <span>Message</span>
+                    <textarea
+                            class="hoverable"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell me what you want to build..."
+                            required
+                    ></textarea>
+                </label>
+
+                <button class="sendBtn hoverable" type="submit">
+                    Send
+                </button>
+
+                <p class="formNote" id="formNote">
+                    &nbsp;
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div>© <span id="year"></span> David</div>
+        <a class="footerTop hoverable" href="#top">Back to top</a>
+    </div>
+</footer>
+
+<script src="scripts/cursor.js"></script>
+<script src="scripts/download.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

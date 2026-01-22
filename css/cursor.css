@@ -1,0 +1,61 @@
+/* custom cursor */
+
+@media (pointer: fine) {
+    body {
+        cursor: none;
+    }
+
+    .cursor {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 1px;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 200ms ease;
+    }
+
+    .cursor__ball {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    .cursor__ball circle {
+        fill: none;
+        stroke: rgba(10, 12, 16, 0.65);
+        stroke-width: 2;
+        transition: transform 200ms ease, stroke 200ms ease,
+        opacity 200ms ease;
+    }
+
+    /* dark part cursor to light */
+    body.inDark .cursor__ball circle {
+        stroke: rgba(255, 255, 255, 0.70);
+    }
+
+    /* hovering */
+    .cursor.is-hover .cursor__ball--big circle {
+        opacity: 0.9;
+        transform: scale(1.35);
+    }
+
+    .cursor.is-hover .cursor__ball--small circle {
+        opacity: 0.85;
+        transform: scale(1.2);
+    }
+
+    /* hide cursor when not in frame */
+    .cursor.is-hidden {
+        opacity: 0;
+    }
+}
+
+@media (pointer: coarse) {
+    .cursor {
+        display: none;
+    }
+}
