@@ -63,7 +63,29 @@
                 </div>
 
                 <div class="resume-btns">
-                    <a href="#" class="resume-btn1" id="downloadResume">Resume</a>
+                        <a
+                                href="/files/resume.pdf"
+                                class="fancy-btn"
+                                download="resume.pdf"
+                        >
+                        <span class="btn-text btn-text-top">Resume</span>
+                        <span class="btn-text btn-text-bottom">Download</span>
+
+                        <!-- background waves -->
+                        <svg class="wave wave-back" viewBox="0 0 2400 800" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="wave-grad" x1="50%" y1="0%" x2="50%" y2="100%">
+                                    <stop offset="0%" stop-color="hsl(37, 99%, 67%)"/>
+                                    <stop offset="100%" stop-color="hsl(316, 73%, 52%)"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#wave-grad)" d="M0 306Q228 450 600 302T1200 343T1800 320T2400 314V800H0Z"/>
+                        </svg>
+
+                        <svg class="wave wave-front" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,288L1440,160L1440,320L0,320Z"/>
+                        </svg>
+                    </a>
                     <a href="https://github.com/999david01" class="resume-btn2">Github</a>
                 </div>
             </div>
@@ -267,7 +289,7 @@
                 </div>
             </a>
 
-            <a class="projectCard hoverable" href="#" target="_blank" rel="noreferrer">
+            <a class="projectCard hoverable" href="https://github.com/999david01/portfolio.main" target="_blank" rel="noreferrer">
                 <div class="projectTop">
                     <span class="projectTag">App</span>
                     <span class="projectYear">2025</span>

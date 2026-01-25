@@ -252,7 +252,7 @@ body.inDark .topLink:hover {
     background-position: center;
     background-repeat: no-repeat;
 
-    border-radius: var(--radius);
+    border-radius: 20%;
 }
 
 
@@ -283,37 +283,117 @@ body.inDark .topLink:hover {
     border-radius: 20px;
 }
 
-.resume-btn1,
-.resume-btn2 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 60px;
-    height: 120px;
-
+.fancy-btn {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    height: 60px;
     border-radius: 999px;
-    border: 0.16em solid #34f125;
+    text-decoration: none;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
 
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 900;
-
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-
-    color: #64a82d;
-    background: transparent;
-
-    transition: background-color 200ms ease, transform 200ms ease;
+    background: linear-gradient(90deg, #ef4444, #f97316);
+    box-shadow: 0 12px 35px rgba(239, 68, 68, 0.6);
 }
 
-.resume-btn1:hover,
+/* text */
+.btn-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    letter-spacing: 4px;
+    font-weight: 800;
+    z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.btn-text-top {
+    top: 50%;
+    transform: translate(-50%, -40%);
+    background: linear-gradient(90deg, #000000, #491d02);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.btn-text-bottom {
+    top: 50%;
+    transform: translate(-50%, 120%);
+    background: linear-gradient(90deg, #b91c1c, #c2410c);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* hover animation */
+.fancy-btn:hover .btn-text-top {
+    transform: translate(-50%, -140%);
+}
+
+.fancy-btn:hover .btn-text-bottom {
+    transform: translate(-50%, -40%);
+}
+
+/* waves */
+.wave {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+}
+
+.wave-back {
+    bottom: -40%;
+    opacity: 0.6;
+}
+
+.wave-front {
+    bottom: -55%;
+    fill: #ef4444;
+}
+
+/* hover polish */
+.fancy-btn:hover {
+    filter: saturate(1.15);
+}
+
+.fancy-btn:active {
+    filter: saturate(1.4);
+}
+
+.resume-btn2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 50px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #7e97b8;
+    background-color: #e0e8ef;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: rgba(255, 255, 255, 0.333);
+    border-radius: 40px 40px 40px 40px;
+    padding: 16px 24px 16px 28px;
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: 0.2s;
+    box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+}
+
 .resume-btn2:hover {
-    background-color: #2bb626;
-    color: #000;
-    transform: translateY(-2px);
+    color: #516d91;
+    background-color: #E5EDF5;
+    box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+}
+
+.resume-btn2:active {
+    box-shadow: none;
 }
 
 /* stats */
@@ -329,7 +409,7 @@ body.inDark .topLink:hover {
 .stat {
     border-radius: 20px;
     padding: 12px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(244, 243, 243, 0.7);
     text-align: center;
 }
 
@@ -1015,3 +1095,401 @@ html.js .sectionFade.is-visible {
     }
 }
 
+
+
+
+/* ========================================================================
+   APPLE-LIKE REFINEMENT LAYER
+   Philosophy:
+   - Calm, intentional motion
+   - Consistent glass + shadow language
+   - Subtle depth, no gimmicks
+   - Everything earned, nothing random
+======================================================================== */
+
+/* ------------------------
+   GLOBAL TYPOGRAPHY TUNING
+------------------------- */
+
+body {
+    letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: -0.03em;
+}
+
+p {
+    line-height: 1.55;
+}
+
+/* ------------------------
+   CONSISTENT GLASS SYSTEM
+------------------------- */
+
+:root {
+    --glass-light: rgba(255,255,255,0.6);
+    --glass-dark: rgba(255,255,255,0.08);
+
+    --glass-border-light: rgba(0,0,0,0.06);
+    --glass-border-dark: rgba(255,255,255,0.12);
+
+    --shadow-elev-1: 0 8px 30px rgba(0,0,0,.08);
+    --shadow-elev-2: 0 16px 50px rgba(0,0,0,.18);
+    --shadow-elev-3: 0 28px 90px rgba(0,0,0,.32);
+}
+
+/* apply glass consistently */
+.about-card,
+.sideCard,
+.history-item,
+.projectCard,
+.contactCard,
+.contactForm {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* ------------------------
+   NAV BAR — IOS-LIKE FLOAT
+------------------------- */
+
+.topBar-inner {
+    background: var(--glass-light);
+    box-shadow: var(--shadow-elev-1);
+}
+
+body.inDark .topBar-inner {
+    background: rgba(10,12,16,0.55);
+}
+
+/* ------------------------
+   HERO — WEIGHT & BALANCE
+------------------------- */
+
+.heroName {
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+/* ------------------------
+   ABOUT CARD DEPTH
+------------------------- */
+
+.about-card {
+    box-shadow: var(--shadow-elev-2);
+}
+
+.about-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,0.35),
+            transparent 40%
+    );
+    pointer-events: none;
+}
+
+/* ------------------------
+   IMAGE REFINEMENT
+------------------------- */
+
+.My-img img {
+    box-shadow: var(--shadow-elev-2);
+    transition: transform 400ms ease, box-shadow 400ms ease;
+}
+
+.My-img img:hover {
+    transform: scale(1.025);
+    box-shadow: var(--shadow-elev-3);
+}
+
+/* ------------------------
+   BUTTONS — IOS FEEL
+------------------------- */
+
+.primaryBtn,
+.ghostBtn,
+.sendBtn,
+.resume-btn1,
+.resume-btn2 {
+    transition:
+            transform 220ms cubic-bezier(.4,0,.2,1),
+            box-shadow 220ms cubic-bezier(.4,0,.2,1),
+            background-color 220ms ease;
+}
+
+.primaryBtn:hover,
+.sendBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elev-2);
+}
+
+.resume-btn1:hover,
+.resume-btn2:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elev-2);
+}
+
+/* ------------------------
+   SIDE CARDS — FLOATING
+------------------------- */
+
+.sideCard {
+    transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.sideCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elev-2);
+}
+
+/* ------------------------
+   HISTORY TIMELINE POLISH
+------------------------- */
+
+.history-item {
+    transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.history-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elev-2);
+}
+
+/* ------------------------
+   SKILLS — CALM MOTION
+------------------------- */
+
+.skillIcon {
+    transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.skillIcon:hover {
+    transform: scale(1.12);
+    box-shadow: var(--shadow-elev-1);
+}
+
+/* ------------------------
+   PROJECT CARDS — APPLE DEPTH
+------------------------- */
+
+.projectCard {
+    box-shadow: var(--shadow-elev-2);
+}
+
+.projectCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elev-3);
+}
+
+/* ------------------------
+   CONTACT — CLEAN INPUT UX
+------------------------- */
+
+.field input:focus,
+.field textarea:focus {
+    border-color: rgba(255,255,255,0.35);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+}
+
+/* ------------------------
+   FOOTER — SUBTLE
+------------------------- */
+
+.footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ------------------------
+   REDUCED MOTION RESPECT
+------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+
+
+/* ========================================================================
+   FINAL COHESION PASS — APPLE DESIGN LANGUAGE
+   Goal:
+   - One button system
+   - One elevation system
+   - One interaction language
+   - Everything feels related
+======================================================================== */
+
+/* ------------------------------------------------------------------------
+   DESIGN TOKENS — SINGLE SOURCE OF TRUTH
+------------------------------------------------------------------------ */
+
+:root {
+    --ui-radius: 18px;
+    --ui-radius-pill: 999px;
+
+    --ui-bg-light: rgba(255,255,255,0.65);
+    --ui-bg-dark: rgba(255,255,255,0.08);
+
+    --ui-border-light: rgba(0,0,0,0.06);
+    --ui-border-dark: rgba(255,255,255,0.12);
+
+    --ui-text-dark: rgba(10,12,16,0.9);
+    --ui-text-light: rgba(255,255,255,0.9);
+
+    --ui-elev-rest: 0 10px 30px rgba(0,0,0,.10);
+    --ui-elev-hover: 0 18px 55px rgba(0,0,0,.22);
+
+    --ui-ease: cubic-bezier(.4,0,.2,1);
+}
+
+/* ------------------------------------------------------------------------
+   UNIVERSAL INTERACTIVE BASE
+------------------------------------------------------------------------ */
+
+button,
+a.primaryBtn,
+a.ghostBtn,
+.sendBtn,
+.resume-btn1,
+.resume-btn2,
+.contactLink {
+    font-family: inherit;
+    border-radius: var(--ui-radius-pill);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    transition:
+            transform 220ms var(--ui-ease),
+            box-shadow 220ms var(--ui-ease),
+            background-color 220ms ease,
+            color 220ms ease,
+            opacity 220ms ease;
+}
+
+/* ------------------------------------------------------------------------
+   PRIMARY ACTION (ONE TRUE BUTTON)
+------------------------------------------------------------------------ */
+
+.primaryBtn,
+.sendBtn {
+    background: #111;
+    color: #fff;
+    box-shadow: var(--ui-elev-rest);
+}
+
+.primaryBtn:hover,
+.sendBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ui-elev-hover);
+}
+
+/* ------------------------------------------------------------------------
+   SECONDARY ACTION
+------------------------------------------------------------------------ */
+
+.ghostBtn,
+.contactLink {
+    background: var(--ui-bg-light);
+    color: var(--ui-text-dark);
+    border: 1px solid var(--ui-border-light);
+}
+
+.ghostBtn:hover,
+.contactLink:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ui-elev-rest);
+    opacity: 0.95;
+}
+
+/* ------------------------------------------------------------------------
+   RESUME BUTTONS — SAME DNA, DIFFERENT ORIENTATION
+------------------------------------------------------------------------ */
+
+
+
+/* ------------------------------------------------------------------------
+   CARDS — SINGLE SURFACE LANGUAGE
+------------------------------------------------------------------------ */
+
+.about-card,
+.sideCard,
+.history-item,
+.projectCard,
+.contactCard,
+.contactForm {
+    border-radius: var(--ui-radius);
+    border: 1px solid var(--ui-border-light);
+    background: var(--ui-bg-light);
+    box-shadow: var(--ui-elev-rest);
+}
+
+/* dark context */
+.projects .projectCard,
+.contact .contactCard,
+.contact .contactForm {
+    background: var(--ui-bg-dark);
+    border: 1px solid var(--ui-border-dark);
+}
+
+/* ------------------------------------------------------------------------
+   CARD INTERACTION
+------------------------------------------------------------------------ */
+
+.sideCard:hover,
+.history-item:hover,
+.projectCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--ui-elev-hover);
+}
+
+/* ------------------------------------------------------------------------
+   ICONS & CHIPS — SAME MATERIAL
+------------------------------------------------------------------------ */
+
+.skillIcon,
+.chip {
+    border-radius: 14px;
+    background: var(--ui-bg-light);
+    border: 1px solid var(--ui-border-light);
+}
+
+.projects .chip {
+    background: var(--ui-bg-dark);
+    border-color: var(--ui-border-dark);
+}
+
+/* ------------------------------------------------------------------------
+   INPUT FIELDS — MATCH BUTTON DNA
+------------------------------------------------------------------------ */
+
+.field input,
+.field textarea {
+    border-radius: var(--ui-radius);
+    transition:
+            box-shadow 220ms var(--ui-ease),
+            border-color 220ms ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+}
+
+/* ------------------------------------------------------------------------
+   MOTION HARMONY
+------------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+    button,
+    a,
+    .sideCard,
+    .projectCard {
+        transition: none !important;
+    }
+}
