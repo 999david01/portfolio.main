@@ -1,38 +1,34 @@
-"use strict";
+const big = document.querySelector(".cursor-ball.big");
+const small = document.querySelector(".cursor-ball.small");
 
-(function initCursor() {
-    const cursor = document.querySelector(".cursor");
-    if (!cursor) return;
+document.addEventListener("mousemove", (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
 
-    const big = cursor.querySelector(".cursor__ball--big");
-    const small = cursor.querySelector(".cursor__ball--small");
-    if (!big || !small) return;
+    // Small dot follows instantly
+    small.style.left = x + "px";
+    small.style.top = y + "px";
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
+    // Big dot trails smoothly
+    big.animate(
+        {
+            left: x + "px",
+            top: y + "px"
+        },
+        {
+            duration: 120,
+            fill: "forwards"
+        }
+    );
+});
 
-    let bigX = mouseX;
-    let bigY = mouseY;
-
-    function onMove(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        small.style.transform =
-            `translate(${mouseX - 5}px, ${mouseY - 5}px)`;
+// Hover grow effect
+document.addEventListener("mouseover", (e) => {
+    if (e.target.closest("a, button")) {
+        big.style.transform = "translate(-50%, -50%) scale(2)";
     }
+});
 
-    function tick() {
-        // Smooth follow for big circle
-        bigX += (mouseX - bigX) * 0.12;
-        bigY += (mouseY - bigY) * 0.12;
-
-        big.style.transform =
-            `translate(${bigX - 15}px, ${bigY - 15}px)`;
-
-        requestAnimationFrame(tick);
-    }
-
-    window.addEventListener("mousemove", onMove, { passive: true });
-    tick();
-})();
+document.addEventListener("mouseout", () => {
+    big.style.transform = "translate(-50%, -50%) scale(1)";
+});

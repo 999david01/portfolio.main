@@ -673,17 +673,111 @@ body.inDark .topLink:hover {
 
 /* skills */
 
-.slog1{
-    position: absolute;
-    margin-top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    font-weight: 800;
-    padding-bottom: 20px;
+
+.skills-section {
+    position: relative;
+    padding: 96px 20px 84px;
+    background:
+            radial-gradient(
+                    1200px 400px at 50% -10%,
+                    rgba(255,255,255,0.06),
+                    transparent 60%
+            ),
+            #000;
+    text-align: center;
 }
 
-.skills-strip { padding: 22px 0 22px 0; }
+.skills-section .section-title {
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 46px;
+    color: var(--textLight);
+}
+
+/* grid */
+.skills-grid {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+/* card */
+.skill-card {
+    position: relative;
+    padding: 22px 22px 24px;
+
+    background: linear-gradient(
+            180deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.03)
+    );
+
+    border-radius: var(--radius);
+    border: 1px solid var(--cardDarkBorder);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: var(--shadowDark);
+
+    transition:
+            transform 260ms ease,
+            box-shadow 260ms ease,
+            border-color 260ms ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,0.22);
+}
+
+/* title */
+.skill-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--textLight);
+}
+
+/* text */
+.skill-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--textLightMuted);
+}
+
+/* divider */
+.skill-card::after {
+    content: "";
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 14px;
+    height: 1px;
+    background: linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,0.18),
+            transparent
+    );
+    opacity: 0.35;
+}
+
+/* =========================
+   SKILLS ICON STRIP
+   ========================= */
+
+.skills-strip {
+    padding: 26px 0;
+    background: #000;
+}
 
 .skills-strip-inner {
     display: flex;
@@ -700,9 +794,12 @@ body.inDark .topLink:hover {
     display: grid;
     place-items: center;
 
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+            0 12px 40px rgba(0, 0, 0, 0.20),
+            inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
 .skillIcon img {
@@ -712,13 +809,16 @@ body.inDark .topLink:hover {
     opacity: 0.95;
 }
 
-/* transition */
+/* =========================
+   TRANSITION / WHITEHOLE
+   ========================= */
 
 .whitehole {
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #000;
 }
 
 .whitehole-image {
@@ -726,7 +826,7 @@ body.inDark .topLink:hover {
     min-width: 100%;
     opacity: 0.95;
 }
-
+/* transition */
 /*  bottom dark part */
 
 .projects,
@@ -1491,5 +1591,177 @@ a.ghostBtn,
     .sideCard,
     .projectCard {
         transition: none !important;
+    }
+}
+
+
+
+
+/* ========================================================================
+   PREMIUM COHESION LAYER — FINAL OVERRIDES ONLY
+   Purpose:
+   - NO deletions
+   - NO behavior changes
+   - Visual unification only
+   - Apple / Linear / Framer-grade finish
+======================================================================== */
+
+/* ------------------------
+   GLOBAL RHYTHM & TYPE
+------------------------- */
+
+body {
+    letter-spacing: -0.015em;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: -0.035em;
+}
+
+.section-text,
+.projectCard p,
+.history-card p {
+    line-height: 1.6;
+}
+
+/* ------------------------
+   UNIFIED ELEVATION SYSTEM
+------------------------- */
+
+:root {
+    --premium-elev-rest: 0 12px 40px rgba(0,0,0,.14);
+    --premium-elev-hover: 0 22px 70px rgba(0,0,0,.28);
+}
+
+/* apply without removing existing shadows */
+.about-card,
+.sideCard,
+.history-item,
+.projectCard,
+.contactCard,
+.contactForm,
+.skill-card {
+    box-shadow: var(--premium-elev-rest);
+    transition:
+            transform 260ms cubic-bezier(.4,0,.2,1),
+            box-shadow 260ms cubic-bezier(.4,0,.2,1);
+}
+
+.about-card:hover,
+.sideCard:hover,
+.history-item:hover,
+.projectCard:hover,
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--premium-elev-hover);
+}
+
+/* ------------------------
+   GLASS REFINEMENT
+------------------------- */
+
+.about-card,
+.topBar-inner,
+.sideCard,
+.history-item,
+.projectCard,
+.contactCard,
+.contactForm {
+    backdrop-filter: blur(18px) saturate(1.15);
+    -webkit-backdrop-filter: blur(18px) saturate(1.15);
+}
+
+/* ------------------------
+   BUTTON DNA UNIFICATION
+------------------------- */
+
+.primaryBtn,
+.ghostBtn,
+.sendBtn,
+.resume-btn1,
+.resume-btn2,
+.fancy-btn {
+    transition:
+            transform 220ms cubic-bezier(.4,0,.2,1),
+            box-shadow 220ms cubic-bezier(.4,0,.2,1),
+            filter 220ms ease;
+}
+
+.primaryBtn:hover,
+.sendBtn:hover {
+    transform: translateY(-3px);
+}
+
+.ghostBtn:hover,
+.resume-btn2:hover {
+    transform: translateY(-2px);
+}
+
+.fancy-btn:hover {
+    filter: saturate(1.2) brightness(1.05);
+}
+
+/* ------------------------
+   IMAGE POLISH
+------------------------- */
+
+.My-img img,
+.history-card .logo-img,
+.skillIcon img {
+    transition:
+            transform 300ms ease,
+            filter 300ms ease,
+            box-shadow 300ms ease;
+}
+
+.My-img img:hover {
+    transform: scale(1.03);
+}
+
+/* ------------------------
+   SKILLS STRIP PREMIUM FEEL
+------------------------- */
+
+.skills-track {
+    gap: 180px;
+}
+
+.skillIcon img {
+    opacity: 0.75;
+}
+
+.skillIcon:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ------------------------
+   FORM UX
+------------------------- */
+
+.field input:focus,
+.field textarea:focus {
+    border-color: rgba(255,255,255,0.35);
+    box-shadow:
+            0 0 0 1px rgba(255,255,255,0.25),
+            0 8px 30px rgba(0,0,0,0.35);
+}
+
+/* ------------------------
+   SECTION SEPARATION
+------------------------- */
+
+.section-sep {
+    opacity: 0.4;
+}
+
+/* ------------------------
+   REDUCED MOTION SAFETY
+------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        transform: none !important;
     }
 }
