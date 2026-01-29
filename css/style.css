@@ -9044,3 +9044,222 @@ h1, h2, h3, h4 {
         border-radius: 18px;
     }
 }
+
+/* =====================================================================
+   MOBILE RESPONSIVENESS LAYER
+   Goal:
+   - ZERO visual redesign
+   - Same look, better behavior on small screens
+   - Override-only, no removals
+===================================================================== */
+
+/* -------------------------
+   GLOBAL MOBILE SAFETY
+-------------------------- */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 15px;
+}
+
+/* Improve tap targets */
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* -------------------------
+   TYPOGRAPHY SCALING
+-------------------------- */
+
+.heroName {
+    font-size: clamp(28px, 7vw, 48px);
+    margin-bottom: -12px;
+}
+
+.section-title {
+    font-size: clamp(24px, 6vw, 34px);
+}
+
+.section-text {
+    font-size: 14px;
+    padding-inline: 10px;
+}
+
+/* -------------------------
+   TOP BAR (SMALL PHONES)
+-------------------------- */
+
+@media (max-width: 480px) {
+    .topBar-inner {
+        padding: 8px 10px;
+    }
+
+    .brand {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    .topLink {
+        font-size: 10px;
+        padding: 6px 6px;
+        letter-spacing: 1px;
+    }
+}
+
+/* -------------------------
+   ABOUT SECTION
+-------------------------- */
+
+@media (max-width: 768px) {
+    .about {
+        padding: 40px 0 46px;
+    }
+
+    .about-card {
+        border-radius: 28px;
+    }
+
+    .about-media {
+        gap: 22px;
+        margin: 20px auto 24px;
+    }
+
+    .resume-btns {
+        margin: 0;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .My-img img {
+        width: 170px;
+        height: 250px;
+    }
+}
+
+/* -------------------------
+   STATS GRID
+-------------------------- */
+
+@media (max-width: 600px) {
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat {
+        padding: 14px;
+    }
+}
+
+/* -------------------------
+   SIDE CARDS
+-------------------------- */
+
+@media (max-width: 768px) {
+    #about-bottom .about-side {
+        gap: 14px;
+    }
+
+    .sideCard {
+        max-width: 100%;
+    }
+}
+
+/* -------------------------
+   SKILLS SECTION
+-------------------------- */
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 70px 14px 64px;
+    }
+
+    .skills-grid {
+        gap: 14px;
+    }
+
+    .skill-card {
+        padding: 18px 18px 22px;
+    }
+}
+
+/* -------------------------
+   SKILLS STRIP / MARQUEE
+-------------------------- */
+
+@media (max-width: 600px) {
+    .skills-track {
+        gap: 110px;
+    }
+
+    .skillIcon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .skillIcon img {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* -------------------------
+   PROJECTS GRID
+-------------------------- */
+
+@media (max-width: 950px) {
+    .projectGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .projectCard {
+        padding: 18px;
+    }
+
+    .projectCard p {
+        min-height: unset;
+    }
+}
+
+/* -------------------------
+   CONTACT SECTION
+-------------------------- */
+
+@media (max-width: 900px) {
+    .contact {
+        padding: 56px 0 60px;
+    }
+
+    .contactGrid {
+        gap: 16px;
+    }
+}
+
+/* -------------------------
+   FOOTER
+-------------------------- */
+
+@media (max-width: 600px) {
+    .footer-inner {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* -------------------------
+   REDUCED MOTION MOBILE SAFETY
+-------------------------- */
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
