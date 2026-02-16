@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="All projects by David — Web development, UI, and design work." />
+    <meta name="color-scheme" content="dark light" />
+    <title>All Projects — David</title>
+
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cursor.css" />
+</head>
+
+<body class="page-projects">
+    <div class="cursor" aria-hidden="true">
+        <div class="cursor-ball big"></div>
+        <div class="cursor-ball small"></div>
+    </div>
+
+    <header class="topBar topBar-visible" aria-label="Main Navigation">
+        <div class="topBar-inner">
+            <a class="brand hoverable" href="index.html" aria-label="Back to home">
+                David
+            </a>
+            <nav class="topNav" aria-label="Primary Navigation">
+                <a class="topLink hoverable" href="index.html#about">About</a>
+                <a class="topLink hoverable" href="index.html#projects">Projects</a>
+                <a class="topLink hoverable" href="index.html#contact">Contact</a>
+                <a class="topLink topLink-active" href="projects.html">All projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="projects-page">
+        <section class="projects-hero">
+            <div class="projects-hero-inner">
+                <span class="section-eyebrow">Work</span>
+                <h1 class="projects-page-title">All projects</h1>
+                <p class="projects-page-sub">Everything I've built and shipped.</p>
+            </div>
+        </section>
+
+        <section class="projects-list">
+            <div class="projects-list-inner">
+                <div class="project-grid project-grid-full">
+                    <a
+                        class="project-card hoverable"
+                        href="https://bean4u.coffee"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="Visit Bean4U website"
+                    >
+                        <div class="project-header">
+                            <span class="project-tag">Web</span>
+                            <time class="project-year">2025</time>
+                        </div>
+                        <h3 class="project-title">bean4U</h3>
+                        <p class="project-description">
+                            Coffee recipes, clean UI, and fast pages.
+                        </p>
+                        <div class="project-tags">
+                            <span class="chip chip-dark">HTML</span>
+                            <span class="chip chip-dark">CSS</span>
+                            <span class="chip chip-dark">JS</span>
+                        </div>
+                    </a>
+
+                    <a
+                        class="project-card hoverable"
+                        href="https://github.com/999david01/portfolio.main"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="View Portfolio project on GitHub"
+                    >
+                        <div class="project-header">
+                            <span class="project-tag">App</span>
+                            <time class="project-year">2025</time>
+                        </div>
+                        <h3 class="project-title">Portfolio</h3>
+                        <p class="project-description">
+                            Reusable sections, smooth motion, premium look.
+                        </p>
+                        <div class="project-tags">
+                            <span class="chip chip-dark">UI</span>
+                            <span class="chip chip-dark">Motion</span>
+                            <span class="chip chip-dark">Design</span>
+                        </div>
+                    </a>
+
+                    <a
+                        class="project-card hoverable"
+                        href="https://github.com/999david01/Formula-Arch"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label="View Formula Arch project on GitHub"
+                    >
+                        <div class="project-header">
+                            <span class="project-tag">Tool</span>
+                            <time class="project-year">2026</time>
+                        </div>
+                        <h3 class="project-title">Formula Arch</h3>
+                        <p class="project-description">
+                            An Arch linux theme made to look like F1.
+                        </p>
+                        <div class="project-tags">
+                            <span class="chip chip-dark">F1</span>
+                            <span class="chip chip-dark">Arch Linux</span>
+                            <span class="chip chip-dark">Sleek</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="projects-page-actions">
+                    <a class="btn btn-cta hoverable" href="index.html#contact">Get in touch</a>
+                    <a class="btn btn-secondary-dark hoverable" href="index.html">Back to home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-copyright">
+                © <span id="year"></span> David
+            </div>
+            <a class="footer-link hoverable" href="index.html" aria-label="Back to home">
+                Back to home
+            </a>
+        </div>
+    </footer>
+
+    <script src="scripts/cursor.js"></script>
+    <script>
+        (function setYear() {
+            const el = document.getElementById("year");
+            if (el) el.textContent = new Date().getFullYear();
+        })();
+    </script>
+</body>
+</html>
