@@ -216,7 +216,7 @@
 
             e.preventDefault();
 
-            const topBarHeight = 80;
+            const topBarHeight = 84;
             const targetPosition =
                 target.getBoundingClientRect().top +
                 window.pageYOffset -

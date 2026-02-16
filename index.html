@@ -3,14 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="David - Web Developer & Designer. Building fast, clean, and beautiful digital experiences." />
+    <meta name="description" content="David — Web Developer & Designer. Building fast, clean, and beautiful digital experiences." />
+    <meta name="theme-color" content="#fafafa" />
     <meta name="color-scheme" content="dark light" />
     <title>David — Portfolio</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-    <!-- Critical JS for no-flash -->
+
     <script>
         document.documentElement.classList.add("js");
     </script>
@@ -20,6 +17,7 @@
 </head>
 
 <body>
+    <a href="#about" class="skip-link">Skip to content</a>
     <!-- Custom Cursor -->
     <div class="cursor" aria-hidden="true">
         <div class="cursor-ball big"></div>
@@ -46,7 +44,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="top" class="hero" aria-label="Hero">
+    <section id="top" class="hero" aria-label="Hero" tabindex="-1">
         <div class="hero-content">
             <h1 class="hero-title">
                 <span class="hero-line">Building</span>
@@ -78,9 +76,12 @@
                     <div class="about-image-wrapper">
                         <img 
                             src="imgs/images.jpg" 
-                            alt="David - Web Developer"
+                            alt="David — Web Developer"
                             class="about-image"
+                            width="200"
+                            height="300"
                             loading="lazy"
+                            decoding="async"
                         />
                     </div>
 
@@ -174,13 +175,13 @@
             </div>
 
             <div class="highlight-card">
-                <h3 class="highlight-title">IDE's</h3>
+                <h3 class="highlight-title">IDEs</h3>
                 <div class="chip-row">
                     <span class="chip">Cursor</span>
                     <span class="chip">VS Code</span>
-                    <span class="chip">InteliJ</span>
-                    <span class="chip">Pycharm</span>
-                    <span class="chip">Webstorm</span>
+                    <span class="chip">IntelliJ</span>
+                    <span class="chip">PyCharm</span>
+                    <span class="chip">WebStorm</span>
                     <span class="chip">DataSpell</span>
                 </div>
             </div>
@@ -196,6 +197,7 @@
                 alt="Bean4U Logo"
                 draggable="false"
                 loading="lazy"
+                decoding="async"
             />
             <div class="brand-text-content">
                 <h2 class="brand-quote">your mentality is your limit</h2>
@@ -328,6 +330,7 @@
             alt=""
             draggable="false"
             loading="lazy"
+            decoding="async"
             aria-hidden="true"
         />
     </section>
